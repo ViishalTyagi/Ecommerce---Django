@@ -17,13 +17,24 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from products.views import product_list_view, productListView, product_detail_view, productDetailView
+from products.views import (
+    product_list_view, 
+    productListView, 
+    product_detail_view, 
+    # productDetailView,
+    productDetailSlugView,
+    ProductFeaturedListView,
+    ProductFeaturedDetailView
+    )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('featured/',ProductFeaturedListView.as_view()),
+    path('featured/<pk>',ProductFeaturedDetailView.as_view()),
     path('products/',productListView.as_view()),
     path('products-fbv/', product_list_view),
-    path('products/<pk>',productDetailView.as_view()),
+    # path('products/<pk>',productDetailSlugView.as_view()),
+    path('products/<slug>',productDetailSlugView.as_view()),
     path('products-fbv/<pk>',product_detail_view)
 ]
 
