@@ -1,16 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ object.title }} </br>
+<div class='container'>
+    <div class='row'>
+        <div class='col'>
+            <h1>{{ object.title }} </br></h1>
 
-{{ object.description }} </br>
+            Trending Status: {{ objects.timestamp | timsesince }} ago
 
-{{ object.price }} </br>
-
-{% if object.image %}
-
-<img src='{{ object.image.url}}' class ='img-fluid'/>
-
-{% endif %}
-
+            {{ object.description | linebreaks}} </br>
+            
+            {{ object.price }} </br>
+            
+            {% if object.image %}
+            
+            <img src='{{ object.image.url}}' class ='img-fluid'/>
+            
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
