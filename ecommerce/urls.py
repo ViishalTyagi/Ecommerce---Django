@@ -17,9 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import home, contact, about, login_page, register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home),
+    path('contact/', contact),
+    path('about/', about),
+    path('login/', login_page),
+    path('register/', register),
     path('products/', include("products.urls", namespace='products')),
 ]
 
