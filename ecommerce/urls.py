@@ -21,11 +21,11 @@ from .views import home, contact, about, login_page, register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home),
-    path('contact/', contact),
-    path('about/', about),
-    path('login/', login_page),
-    path('register/', register),
+    path('home/', home, name='home'),
+    path('contact/', contact, name='contact'),
+    path('about/', about, name='about'),
+    path('login/', login_page, name='login'),
+    path('register/', register, name='register'),
     path('products/', include("products.urls", namespace='products')),
 ]
 

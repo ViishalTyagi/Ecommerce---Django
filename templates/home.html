@@ -1,31 +1,23 @@
 {% extends "base.html" %}
-
-{% load static %}
-
-<title>Home Page Template</title>
- 
-{% block base_head %}
-<link rel='stylesheet' href='{% static "css/main.css" %}' >
-{% endblock %}
- 
+{%load static%}
 {% block content %}
 <div class='text-center'>
-    <h1>{{ title }}</h1>
-    <h1>Hello, world we're working!</h1>
+    <h1>{{ content }}</h1>
 </div>
 
-<div class='row'>
+<div class='row ml-auto'>
     <div class='col'>
-        <img src="{% static 'img/beach.jpg' %}" class='img-fluid' />
-        <p>{{ content }}</p>
+        <img src="{%static "products/Allu.png" %}"  class="rounded mx-auto d-block" style='max-height: 200px;' />
+
     </div>
 </div>
 
 {% if request.user.is_authenticated %}
 <div class='row'>
     <div class='col'>
-        <h1>Premium</h1>
-        {{ premium_content }}
+        <h2>{{ premium_content }}</h2>
     </div>
 </div>
 {% endif %}
+
+{% endblock %}

@@ -7,10 +7,10 @@ def home(request):
     context = {
         "title":"Allu!",
         "content":" Redefining your shopping experience.",
-
+        "premium_content": "Welcome! Discover, Engage & Shop Fashion apparel using Allu's hyperlocal product.",
     }
-    if request.user.is_authenticated():
-        context["premium_content"] = "Welcome! Discover, Engage & Shop Fashion apparel using Allu's hyperlocal product."
+    # if request.user.is_authenticated():
+    #     context["premium_content"] = "Welcome! Discover, Engage & Shop Fashion apparel using Allu's hyperlocal product."
     return render(request, "home.html", context)
 
 def about(request):
@@ -27,8 +27,7 @@ def about(request):
 def contact(request):
     contact_form = ContactForm(request.POST or None)
     context = {
-        "title":"Contact Us",
-        "content":" viishaltyagi@gmail.com ",
+        "content":" Contact Us ",
         "form": contact_form,
     }
         
