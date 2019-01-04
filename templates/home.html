@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {%load static%}
 {% block content %}
-<div class='text-center'>
-    <h1>{{ content }}</h1>
-</div>
 
-<div class='row ml-auto'>
+<div class='text-center py-3'>
+        <h1>{{ content }}</h1>
+    </div>
+<div class='row ml-auto py-5'>
     <div class='col'>
         <img src="{%static "products/Allu.png" %}"  class="rounded mx-auto d-block" style='max-height: 200px;' />
 
@@ -14,7 +14,7 @@
 
 {% if request.user.is_authenticated %}
 <div class='row'>
-    <div class='col'>
+    <div class='col mx-5'>
         <h2>{{ premium_content }}</h2>
     </div>
 </div>
