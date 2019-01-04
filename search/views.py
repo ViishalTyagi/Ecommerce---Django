@@ -15,5 +15,5 @@ class searchproductView(ListView):
         request = self.request
         query = request.GET.get('q', None)
         if query is not None:
-            return Product.objects.filter(title__icontains=query)
+            return Product.objects.search(query)
         return Product.objects.featured()
