@@ -28,6 +28,8 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('products/', include("products.urls", namespace='products')),
     path('search/', include("search.urls", namespace='search')),
+    path('cart/', include("carts.urls", namespace='carts')),
+
 ]
 
 if settings.DEBUG:
