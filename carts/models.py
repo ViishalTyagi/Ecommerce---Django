@@ -56,3 +56,4 @@ def pre_save_cart_receiver(sender, instance, *args, **kwargs):
         instance.total = Decimal(instance.subtotal) * Decimal(1.08)
 
 pre_save.connect(pre_save_cart_receiver, sender=Cart)
+    
